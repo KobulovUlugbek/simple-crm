@@ -11,6 +11,7 @@ export class DialogAddUserComponent {
 
   user = new User();
   birthDate: Date;
+  loading = false;
 
   constructor(private firestore: AngularFirestore) {
 
@@ -20,11 +21,12 @@ export class DialogAddUserComponent {
   saveUser(){
     this.user.birthDate = this.birthDate.getTime();
     console.log('user', this.user)
-
+    this.loading = true;
     this.firestore
     .collection('users')
     .add(this.user.toJSON())
     .then((result:any) => {
+      this.loading = false;
       console.log('adding user finish', result)
     });
   }
