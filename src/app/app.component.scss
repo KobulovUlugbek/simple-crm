@@ -57,6 +57,21 @@ mat-toolbar, mat-toolbar-row{
 }
 
 .logo{
-    width: 55px;
+    width: 45px;
     height: auto;
+}
+.logo-container{
+    align-items: center;
+    justify-content: start;
+    display: flex;
+    
+    
+    h5{
+        position: absolute;
+        left: 100px;
+        top: 18px;
+        font-size: 17px;
+        font-weight: 500;
+        color:rgba(0, 0, 0, 0.4);
+    }
 }
