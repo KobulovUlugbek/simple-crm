@@ -30,6 +30,7 @@ import {MatCardModule} from '@angular/material/card';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-ad
     UserComponent,
     DialogAddUserComponent,
     UserDetailComponent,
-    DialogEditAddressComponent
+    DialogEditAddressComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
