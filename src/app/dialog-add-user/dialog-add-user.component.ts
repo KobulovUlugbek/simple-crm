@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { User } from 'src/models/user.class';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-dialog-add-user',
   templateUrl: './dialog-add-user.component.html',
@@ -13,7 +14,7 @@ export class DialogAddUserComponent {
   birthDate: Date;
   loading = false;
 
-  constructor(private firestore: AngularFirestore) {
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: AngularFirestore) {
 
   }
 
@@ -28,6 +29,7 @@ export class DialogAddUserComponent {
     .then((result:any) => {
       this.loading = false;
       console.log('adding user finish', result)
+      this.dialogRef.close();
     });
   }
 }
