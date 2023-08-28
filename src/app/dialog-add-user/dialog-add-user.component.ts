@@ -12,6 +12,7 @@ export class DialogAddUserComponent {
 
   user = new User();
   birthDate: Date;
+  formattedBirthDate: string;
   loading = false;
 
   constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: AngularFirestore) {
@@ -20,7 +21,8 @@ export class DialogAddUserComponent {
 
 
   saveUser(){
-    this.user.birthDate = this.birthDate.getTime();
+    this.user.birthDate = new Date(this.birthDate);
+    this.formattedBirthDate = this.user.getFormattedBirthDate(); 
     console.log('user', this.user)
     this.loading = true;
     this.firestore

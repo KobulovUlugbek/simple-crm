@@ -16,6 +16,10 @@ export class UserDetailComponent {
   userId = '';
   user: User = new User();
 
+  getFormattedBirthDate() {
+    return this.user.getFormattedBirthDate();
+  }
+  
   constructor(private route: ActivatedRoute, 
     private firestore: AngularFirestore, 
     public dialog: MatDialog) {}
