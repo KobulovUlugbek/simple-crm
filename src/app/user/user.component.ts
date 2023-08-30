@@ -31,4 +31,17 @@ export class UserComponent {
   openDialog(){
     this.dialog.open(DialogAddUserComponent);
   }
+
+  deleteUser(userId: string) {
+    if (confirm("Are you sure you want to delete this user?")) {
+      this.firestore.collection('users').doc(userId).delete()
+        .then(() => {
+          console.log("User deleted successfully");
+        })
+        .catch(error => {
+          console.error("Error deleting user: ", error);
+        });
+    }
+  }
+
 }

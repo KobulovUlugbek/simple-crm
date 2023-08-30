@@ -6,12 +6,16 @@
         <th>Name</th>
         <th>E-Mail</th>
         <th>City</th>
+        <th>Delete</th>
       </tr>
 
-      <tr *ngFor="let user of allUsers" [routerLink]="['/user/' + user.customIdName]">
-        <td>{{ user.firstName }} {{ user.lastName }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.city }}</td>
+      <tr *ngFor="let user of allUsers">
+        <td [routerLink]="['/user/' + user.customIdName]">{{ user.firstName }} {{ user.lastName }}</td>
+        <td [routerLink]="['/user/' + user.customIdName]">{{ user.email }}</td>
+        <td [routerLink]="['/user/' + user.customIdName]">{{ user.city }}</td>
+        <td>
+          <button class="delete-button" mat-raised-button color="warn" (click)="deleteUser(user.customIdName)">Delete</button>
+        </td>        
       </tr>
 
     </table>

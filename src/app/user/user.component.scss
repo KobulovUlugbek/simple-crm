@@ -12,6 +12,7 @@ mat-card-content{
 .user-table{
     width: 100%;
     border-collapse: collapse;
+    position: relative;
 
     tr{
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -54,4 +55,9 @@ mat-card-content{
         font-weight: 500;
         text-align: start;
     }
+}
+
+.delete-button{
+    position: relative;
+    display: block;
 }
